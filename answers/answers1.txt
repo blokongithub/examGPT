@@ -1,0 +1,25 @@
+1) Describe the process of photosynthesis, including the light-dependent and light-independent reactions, and the factors that can affect its rate. (10 marks)  
+- 2 marks for describing the overall equation of photosynthesis (6CO2 + 6H2O → C6H12O6 + 6O2)  
+- 3 marks for explaining light-dependent reactions: production of ATP and NADPH in thylakoids, photolysis of water, release of oxygen  
+- 3 marks for explaining light-independent reactions (Calvin Cycle): use of ATP and NADPH to convert CO2 into glucose in the stroma  
+- 1 mark for mentioning factors affecting rate (e.g., light intensity, CO2 concentration, temperature)  
+
+2) Explain the role of enzymes in biological processes, including how factors such as temperature and pH can influence enzyme activity. (10 marks)  
+- 2 marks for defining enzymes as biological catalysts and their role in lowering activation energy  
+- 2 marks for explaining the mechanism of enzyme action (e.g., active site, substrate specificity, lock and key model or induced fit model)  
+- 3 marks for discussing factors affecting enzyme activity:   
+  - 1 mark for temperature effects (increased activity up to an optimum, followed by denaturation)  
+  - 1 mark for pH effects (optimal range varies, changes can lead to denaturation or ionization of active site)  
+- 3 marks for providing examples of enzymes in biological processes (e.g., catalase, amylase, lactase)  
+
+3) Discuss the significance of genetic variation in a population and the mechanisms that can lead to genetic diversity. (10 marks)  
+- 2 marks for defining genetic variation and its importance for adaptation and evolution  
+- 3 marks for explaining mechanisms that create genetic variation:  
+  - 1 mark for mutation (source of new alleles)  
+  - 1 mark for sexual reproduction (crossing over and independent assortment)  
+  - 1 mark for gene flow (migration between populations)  
+- 3 marks for discussing the significance of genetic diversity:  
+  - 1 mark for resilience to environmental changes  
+  - 1 mark for survival of species (natural selection)  
+  - 1 mark for reduced inbreeding depression and increased population viability  
+- 2 marks for providing relevant examples (e.g., effect on populations of plants/animals, importance in conservation)  
