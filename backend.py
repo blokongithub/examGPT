@@ -211,3 +211,8 @@ def genexam(exam, board, subject, questions):
     print(f"Generated answer file: {a_file}")
     print(f"Generated question PDF: {qpdf_file}")
     print(f"Generated answer PDF: {apdf_file}")
+
+    # Return the paths of the generated PDF files
+    return qpdf_file, apdf_file
+
+    
