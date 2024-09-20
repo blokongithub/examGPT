@@ -6,12 +6,19 @@ from openai import OpenAI
 from reportlab.lib.pagesizes import letter
 from reportlab.pdfgen import canvas
 from reportlab.lib.units import inch
+import sqlite3
+import json
 
 load_dotenv()
 api_key = os.getenv("API_KEY")
 
 client = OpenAI(api_key=api_key)
 model = "gpt-4o-mini"
+database_path = "exam.db"
+
+
+def get_db_connection():
+    return sqlite3.connect(database_path)
 
 def startup():
     # Define the folder names
@@ -30,6 +37,45 @@ def startup():
             print(f"Folder '{folder_name}' created.")
         else:
             print(f"Folder '{folder_name}' already exists.")
+
+    try:
+        with get_db_connection() as conn:
+            cursor = conn.cursor()
+            cursor.execute("""CREATE TABLE IF NOT EXISTS USERS (
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                USERNAME TEXT NOT NULL,
+                PASSWORD TEXT NOT NULL,
+                EMAIL TEXT NOT NULL,
+                USERDATA BLOB
+            )""")
+            cursor.execute("""CREATE TABLE IF NOT EXISTS EXAMS (
+                ID INTEGER PRIMARY KEY AUTOINCREMENT,
+                NAME TEXT NOT NULL,
+                BOARD TEXT NOT NULL,
+                SUBJECT TEXT NOT NULL,
+                QUESTIONS INTEGER NOT NULL,
+                apdf_id INTEGER NOT NULL,
+                qpdf_id INTEGER NOT NULL
+            )""")
+    except:
+        print("Database already exists.")
+    
+
+def add_user(username, password, email):
+    userdata = {
+        "exams": {}
+    }
+    binary_userdata = json_to_sqlite(userdata)
+    with get_db_connection() as conn:
+        cursor = conn.cursor()
+        cursor.execute("INSERT INTO USERS (USERNAME, PASSWORD, EMAIL, USERDATA) VALUES (?, ?, ?, ?)", (username, password, email, binary_userdata))
+        conn.commit()
+
+def json_to_sqlite(jsondata):
+    return bytes(json.dumps(jsondata), 'utf-8')
+
+def sqlite_to_json(sqlitedata):
+    return json.loads(sqlitedata.decode('utf-8'))
 
 def get_next_id(folder_name, extension):
     files = os.listdir(folder_name)
@@ -214,5 +260,3 @@ def genexam(exam, board, subject, questions):
 
     # Return the paths of the generated PDF files
     return qpdf_file, apdf_file
-
-    

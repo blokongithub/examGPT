@@ -8,6 +8,36 @@ from io import BytesIO
 app = flask.Flask(__name__)
 HOST = 5000
 
+@app.route('/')
+def index():
+    return redirect('/home')
+
+@app.route('/home')
+def home():
+    return render_template('home.html')
+
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if request.method == 'POST':
+        username = request.form['username']
+        email = request.form['email']
+        password = request.form['password']
+        backend.register(username, password) #TODO
+        return redirect('/login')
+
+    return render_template('register.html')
+
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        if backend.login(username, password): #TODO
+            return redirect('/generate')
+        else:
+            return render_template('login.html')
+
+    return render_template('login.html')
+
 @app.route('/generate', methods=['GET', 'POST'])
 def generate_exam():
     if request.method == 'POST':
