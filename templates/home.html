@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f6f8;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            color: #333;
+        }
+        .title-bar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #4d4d4d;
+            padding: 15px 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            z-index: 1000;
+        }
+
+        .title-bar h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-buttons a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            background-color: #0056b3;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #00408a;
+        }
+
+        .content {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .content h2 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .content p {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .action-button {
+            display: inline-block;
+            background-color: #28a745;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: #218838;
+        }
+
+        @media (max-width: 768px) {
+            .nav-buttons a {
+                padding: 8px 12px;
+                font-size: 12px;
+            }
+            .content h2 {
+                font-size: 22px;
+            }
+            .content p {
+                font-size: 14px;
+            }
+            .action-button {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-bar">
+        <h1>Home</h1>
+        <div class="nav-buttons">
+            <a href="/generate">Generate</a>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Welcome to Exam Generator</h2>
+        <p>Generate exams with random questions from any exam board and any topic, yes i mean any!</p>
+        <a href="/generate" class="action-button">Generate Exam</a>
+    </div>
+</body>
+</html>
